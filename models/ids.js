@@ -19,7 +19,7 @@ const idsSchema = new mongoose.Schema({
 
 const Ids = mongoose.model('Ids', idsSchema);
 
-Ids.findOne((err, data) => {
+Ids.findOne().then((err, data) => {
 	if (!data) {
 		const newIds = new Ids({
 			restaurant_id: 0,
@@ -31,7 +31,7 @@ Ids.findOne((err, data) => {
 			img_id: 0,
 			category_id: 0,
 			item_id: 0,
-			sku_id: 0, 
+			sku_id: 0,
 			admin_id: 0,
 			statis_id: 0,
 		});

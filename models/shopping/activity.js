@@ -18,7 +18,7 @@ activitySchema.index({index: 1});
 
 const Activity = mongoose.model('Activity', activitySchema);
 
-Activity.findOne((err, data) => {
+Activity.findOne().then((err, data) => {
 	if (!data) {
 		activityData.forEach(item => {
 			Activity.create(item);

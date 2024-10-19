@@ -10,8 +10,8 @@ const remarkSchema = new Schema({
 
 const Remark = mongoose.model('Remark', remarkSchema);
 
-Remark.findOne((err, data) => {
-	if(!data){
+Remark.findOne().then((err, data) => {
+	if (!data) {
 		Remark.create(remarkData)
 	}
 })

@@ -47,7 +47,7 @@ categorySchema.statics.addCategory = async function (type){
 
 const Category = mongoose.model('Category', categorySchema)
 
-Category.findOne((err, data) => {
+Category.findOne().then((err, data) => {
 	if (!data) {
 		for (let i = 0; i < categoryData.length; i++) {
 			Category.create(categoryData[i]);

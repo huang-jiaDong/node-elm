@@ -18,7 +18,7 @@ const entrySchema = new Schema({
 
 const Entry = mongoose.model('Entry', entrySchema)
 
-Entry.findOne((err, data) => {
+Entry.findOne().then((err, data) => {
 	if (!data) {
 		for (let i = 0; i < entryData.length; i++) {
 			Entry.create(entryData[i]);

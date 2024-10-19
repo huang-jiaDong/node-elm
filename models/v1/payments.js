@@ -17,13 +17,13 @@ const paymentsSchema = new Schema({
 
 const Payments = mongoose.model('Payments', paymentsSchema);
 
-Payments.findOne((err, data) => {
+Payments.findOne().then((err, data) => {
 	if (!data) {
 		paymentsData.forEach(item => {
 			Payments.create(item);
 		})
 	}
-})	
+})
 
 
 export default Payments

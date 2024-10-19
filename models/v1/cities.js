@@ -90,9 +90,9 @@ citySchema.statics.getCityById = function(id){
 const Cities = mongoose.model('Cities', citySchema);
 
 
-Cities.findOne((err, data) => {
+Cities.findOne().then((err, data) => {
 	if (!data) {
-		Cities.create({data: cityData});
+		Cities.create({ data: cityData });
 	}
 });
 

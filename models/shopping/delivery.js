@@ -16,7 +16,7 @@ DeliverySchema.index({id: 1});
 
 const Delivery = mongoose.model('Delivery', DeliverySchema);
 
-Delivery.findOne((err, data) => {
+Delivery.findOne().then((err, data) => {
 	if (!data) {
 		Delivery.create(deliveryData);
 	}

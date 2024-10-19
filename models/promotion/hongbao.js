@@ -32,7 +32,7 @@ hongbaoSchema.index({id: 1});
 
 const Hongbao = mongoose.model('Hongbao', hongbaoSchema);
 
-Hongbao.findOne((err, data) => {
+Hongbao.findOne().then((err, data) => {
 	if (!data) {
 		hongbaoData.forEach(item => {
 			Hongbao.create(item)
